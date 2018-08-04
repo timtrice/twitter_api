@@ -4,7 +4,7 @@ library(rtweet)
 
 # https://jsta.rbind.io/blog/making-a-twitter-dashboard-with-r/
 
-username <- ''
+username <- 'timtrice'
 
 token <- create_token(
   app             = Sys.getenv("twitter_app"),
