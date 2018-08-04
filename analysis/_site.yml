@@ -1,4 +1,4 @@
-name: "project"
+name: "twitterlikes"
 output_dir: "../docs"
 navbar:
   title: "project"
@@ -7,7 +7,7 @@ navbar:
       href: index.html
   right:
     - icon: fa-github
-      href: https://github.com/timtrice/tweet_likes
+      href: https://github.com/timtrice/twitterlikes
 output:
   workflowr::wflow_html:
     toc: true
