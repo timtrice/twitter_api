@@ -7,7 +7,7 @@ navbar:
       href: index.html
   right:
     - icon: fa-github
-      href: https://github.com/jdblischak/workflowr
+      href: https://github.com/timtrice/tweet_likes
 output:
   workflowr::wflow_html:
     toc: true
