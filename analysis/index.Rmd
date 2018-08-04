@@ -1,9 +1,70 @@
 ---
-title: "Home"
+title: "Twitter Favorites"
 site: workflowr::wflow_site
 output:
   workflowr::wflow_html:
     toc: false
 ---
 
-Welcome to my research website.
+```{r setup}
+knitr::opts_chunk$set(
+  echo = FALSE, 
+  warning = FALSE, 
+  message = FALSE, 
+  error = FALSE, 
+  fig.align = "center"
+)
+```
+
+```{r libraries}
+library(dplyr)
+library(DT)
+library(purrr)
+```
+
+```{r data}
+load(here::here(".", "data", "favorites.rds"))
+```
+
+```{r}
+# Convert Date field to URL pointing to tweet
+create_link <- function(dt, url) {
+  if (is.na(dt)) return("")
+  return(glue::glue("<a href='{URLdecode(url)}' target='_blank'>{dt}</a>"))
+}
+
+# debug(create_link)
+
+favorites$created_at_url <-
+  map2(
+    favorites$created_at,
+    favorites$media_expanded_url,
+    create_link
+  )
+
+# favorites <- 
+#   favorites %>% 
+#   rowwise() %>% 
+#   mutate(
+#     created_at_url = glue::glue(
+#       "<a href='{URLdecode(media_expanded_url)}'>{created_at}</a>"
+#     )
+#   )
+```
+
+```{r}
+favorites %>% 
+  unique() %>% 
+  arrange(desc(created_at)) %>% 
+  select(created_at_url, screen_name, text) %>% 
+  datatable(
+    rownames = FALSE,
+    colnames = c("Date", "Handle", "Text"), 
+    filter = "top", 
+    escape = TRUE
+  ) %>% 
+  formatStyle(
+    columns = 1:3, 
+    fontSize = "70%"
+  )
+```
