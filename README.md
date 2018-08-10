@@ -41,4 +41,4 @@ install.packages(
 
 ## Acknowledgements
 
-  * @jstla for much of the [original code](https://jsta.rbind.io/blog/making-a-twitter-dashboard-with-r/).
+  * @jsta for much of the [original code](https://jsta.rbind.io/blog/making-a-twitter-dashboard-with-r/).
