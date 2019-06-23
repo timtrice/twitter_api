@@ -1,5 +1,6 @@
 library(here)
 library(dplyr)
+library(purrr)
 library(rtweet)
 
 # https://jsta.rbind.io/blog/making-a-twitter-dashboard-with-r/
@@ -14,11 +15,37 @@ token <- create_token(
   access_secret   = Sys.getenv("twitter_access_secret")
 )
 
-my_likes <- get_favorites(username, n = 3000)
-my_likes2 <- get_favorites(username, n = 3000, max_id = min(my_likes$status_id))
-my_likes3 <- get_favorites(username, n = 3000, max_id = min(my_likes2$status_id))
-my_likes4 <- get_favorites(username, n = 3000, max_id = min(my_likes3$status_id))
+retrieve_favorites <- function(username, n = 3000L, last_status_id = NA) {
 
-favorites <- rbind(my_likes, my_likes2, my_likes3, my_likes4)
+  if (is.na(last_status_id)) {
+    favorites <- get_favorites(username, n = n)
+  } else {
+    favorites <- get_favorites(username, n = n, max_id = last_status_id)
+  }
 
-save(favorites, file = here(".", "data", "favorites.rds"))
+  # Warn of rate limit if under 25%
+  rate_limit <- rate_limit(token, "favorites/list")
+  rate_limit <- rate_limit$remaining/rate_limit$limit
+
+  if (is.nan(rate_limit)) {
+    error("Rate limit exceeded", .call = FALSE)
+  }
+
+  if (rate_limit <= 0.25) {
+    warning("Rate limit approaching")
+  }
+
+  favorites <- arrange(favorites, desc(created_at))
+
+  if (nrow(favorites) < n) {
+    return(favorites)
+  }
+
+  last_id <- max_id(favorites)
+
+  return(rbind(favorites, retrieve_favorites(username, last_status_id = last_id)))
+}
+
+favorites <- retrieve_favorites(username)
+
+save(favorites, file = here("./output/favorites.rds"))

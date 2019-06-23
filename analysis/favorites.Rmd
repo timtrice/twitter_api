@@ -1,0 +1,82 @@
+---
+title: "Twitter Favorites"
+site: workflowr::wflow_site
+output:
+  workflowr::wflow_html:
+    toc: true
+    toc_depth: 3
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, 
+  warning = FALSE, 
+  message = FALSE, 
+  error = FALSE, 
+  fig.align = "center"
+)
+```
+
+```{r libraries}
+library(dplyr)
+library(kableExtra)
+library(knitr)
+library(scales)
+library(stringr)
+```
+
+```{r data}
+load(here::here("./output/favorites.rds"))
+
+favorites <- 
+  favorites %>% 
+  mutate(
+    # Add ratio, retweets/favorites
+    ratio = percent(.data$retweet_count/.data$favorite_count), 
+    # Convert hashtags to html entities
+    text = str_replace_all(string = .data$text, pattern = "#", replacement = "&num;"), 
+    # Get rid of consecutive newline characters that show up in one tweet
+    # text = str_replace_all(string = .data$text, pattern = "\n\n", replacement = "\n")
+  )
+```
+
+## Data
+
+```{r favorites}
+favorites %>% 
+  mutate(
+    screen_name = cell_spec(
+      x = .data$screen_name, 
+      format = "html", 
+      link = paste0("https://twitter.com/", .data$screen_name)
+    ), 
+    created_at = cell_spec(
+      x = .data$created_at, 
+      format = "html", 
+      link = .data$url
+    )
+  ) %>% 
+  select(
+    .data$screen_name, 
+    .data$text, 
+    .data$created_at, 
+    .data$ratio
+  ) %>% 
+  kable(
+    format = "html", 
+    escape = FALSE, 
+    col.names = c(
+      "User", 
+      "Tweet", 
+      "Published", 
+      "Ratio"
+    ), 
+    caption = paste(
+      "Ratio is number of retweets divided by favorites.", 
+      sep = "\n"
+    )
+  ) %>% 
+  kable_styling(bootstrap_options = c("hover", "condensed"))
+```

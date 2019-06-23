@@ -1,10 +1,10 @@
-name: "twitterlikes"
+name: "timtrice-twitter"
 output_dir: "../docs"
 navbar:
-  title: "project"
+  title: "Twitter"
   left:
-    - text: "Home"
-      href: index.html
+    - text: "Favorites"
+      href: favorites.html
   right:
     - icon: fa-github
       href: https://github.com/timtrice/twitterlikes
