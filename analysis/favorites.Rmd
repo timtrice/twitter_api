@@ -2,9 +2,7 @@
 title: "Favorites"
 site: workflowr::wflow_site
 output:
-  workflowr::wflow_html:
-    toc: true
-    toc_depth: 3
+  workflowr::wflow_html
 editor_options: 
   chunk_output_type: console
 ---
