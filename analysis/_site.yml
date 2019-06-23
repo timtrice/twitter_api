@@ -14,3 +14,5 @@ output:
     toc_float: false
     theme: cosmo
     highlight: textmate
+    includes:
+        in_header: ga.html
