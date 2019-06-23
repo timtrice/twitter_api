@@ -1,13 +1,13 @@
-name: "timtrice-twitter"
+name: "twitter_api"
 output_dir: "../docs"
 navbar:
-  title: "Twitter"
+  title: "Twitter API"
   left:
     - text: "Favorites"
       href: favorites.html
   right:
     - icon: fa-github
-      href: https://github.com/timtrice/twitterlikes
+      href: https://github.com/timtrice/twitter_api
 output:
   workflowr::wflow_html:
     toc: true

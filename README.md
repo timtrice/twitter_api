@@ -1,8 +1,8 @@
-# twitterlikes
+# twitter_api
 
 ## GitHub repo
 
-[https://github.com/timtrice/twitterlikes](https://github.com/timtrice/twitterlikes)
+[https://github.com/timtrice/twitter_api](https://github.com/timtrice/twitter_api)
 
 **NOTE**: /docs is ignored. Pushed manually to Netlify using the [CLI](https://github.com/netlify/netlifyctl/blob/master/README.md). 
 
