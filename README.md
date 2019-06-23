@@ -1,24 +1,35 @@
-# twitter_api
+
+# twitter\_api
+
+[![minimal R
+version](https://img.shields.io/badge/R%3E%3D-3.6.0-6666ff.svg)](https://cran.r-project.org/)
+[![Netlify
+Status](https://api.netlify.com/api/v1/badges/b3a76bf0-ec22-487d-b567-7c2ea7ff4812/deploy-status)](https://app.netlify.com/sites/twitterapi/deploys)
+![Build
+Status](https://img.shields.io/travis/timtrice/twitter_api/master.svg)
 
 ## GitHub repo
 
-[https://github.com/timtrice/twitter_api](https://github.com/timtrice/twitter_api)
+<https://github.com/timtrice/twitter_api>
 
-**NOTE**: /docs is ignored. Pushed manually to Netlify using the [CLI](https://github.com/netlify/netlifyctl/blob/master/README.md). 
+**NOTE**: /docs is ignored. Pushed manually to Netlify using the
+[CLI](https://github.com/netlify/netlifyctl/blob/master/README.md).
 
 ## Required Packages
 
-  * here
-  
-  * dplyr
-  
-  * DT
-  
-  * rtweet
-  
-  * workflowr
+  - here
 
-```r
+  - dplyr
+
+  - DT
+
+  - rtweet
+
+  - workflowr
+
+<!-- end list -->
+
+``` r
 install.packages(
   c(
     "here", 
@@ -41,4 +52,5 @@ install.packages(
 
 ## Acknowledgements
 
-  * @jsta for much of the [original code](https://jsta.rbind.io/blog/making-a-twitter-dashboard-with-r/).
+  - @jsta for much of the [original
+    code](https://jsta.rbind.io/blog/making-a-twitter-dashboard-with-r/).
