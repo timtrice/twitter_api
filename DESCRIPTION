@@ -1,0 +1,15 @@
+Package: timtriceTwitter
+Title: Analyzing twitter for timtrice
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Tim",
+           family = "Trice",
+           role = c("aut", "cre"),
+           email = "tim.trice@gmail.com")
+Description: This project is in development phase
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Imports:
+  usethis, 
+  workflowr
