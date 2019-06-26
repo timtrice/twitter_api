@@ -1,8 +1,7 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
 language: r
-
 cache: packages
-
+cran: https://cran.rstudio.com
 script:
   - git clone https://github.com/timtrice/twitter_api.git
   - cd sample_workflowr
