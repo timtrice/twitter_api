@@ -1,0 +1,19 @@
+# R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+language: r
+
+cache: packages
+
+script:
+  - git clone https://github.com/timtrice/twitter_api.git
+  - cd sample_workflowr
+  - Rscript --verbose code/02_retrieve.R
+  - GH_REPO="@github.com/$TRAVIS_REPO_SLUG.git"
+  - FULL_REPO="https://$GH_TOKEN$GH_REPO"
+  - git config --global user.name "Travis CI"
+  - git config --global user.email "tim.trice@gmail.com"
+  - Rscript -e 'workflowr::wflow_build(verbose = TRUE, view = FALSE);'
+  - cd docs
+  - git init
+  - git add .
+  - git commit -m 'Rebuild docs'
+  - git push --force --quiet $FULL_REPO master:gh-pages
