@@ -2,13 +2,10 @@
 language: r
 cache: packages
 cran: https://cran.rstudio.com
-matrix:
-  include:
-    - r: release
-      deploy:
-        provider: script
-        script:
-          - bash code/deploy.sh
-        skip_cleanup: true
-        on:
-          branch: master
+deploy:
+  provider: script
+  script:
+    - bash code/deploy.sh
+  skip_cleanup: true
+  on:
+    branch: master
