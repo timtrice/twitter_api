@@ -1,52 +1,81 @@
 ---
 output: github_document
+editor_options: 
+  chunk_output_type: console
 ---
 
-# twitter_api
-
-[![minimal R version](https://img.shields.io/badge/R%3E%3D-3.6.0-6666ff.svg)](https://cran.r-project.org/) 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b3a76bf0-ec22-487d-b567-7c2ea7ff4812/deploy-status)](https://app.netlify.com/sites/twitterapi/deploys)
-![Build Status](https://img.shields.io/travis/timtrice/twitter_api/master.svg)
-
-## GitHub repo
-
-[https://github.com/timtrice/twitter_api](https://github.com/timtrice/twitter_api)
-
-**NOTE**: /docs is ignored. Pushed manually to Netlify using the [CLI](https://github.com/netlify/netlifyctl/blob/master/README.md). 
-
-## Required Packages
-
-  * here
-  
-  * dplyr
-  
-  * DT
-  
-  * rtweet
-  
-  * workflowr
-
-```r
-install.packages(
-  c(
-    "here", 
-    "devtools", 
-    "dplyr", 
-    "DT", 
-    "rtweet", 
-    "workflowr"
-  )
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE, 
+  message = FALSE
 )
 ```
 
-## Contributing
+```{r libraries}
+library(dplyr)
+```
 
-## Versioning
+```{r vars}
+# Get URL to repo
+url <- desc::desc_get_urls()
 
-## Authors
+# Get Depends, Imports and Suggests
+packages <- desc::desc_get_deps()
 
-## License
+# Get R version
+which_r <-
+  packages %>% 
+  filter(.data$package == "R") %>% 
+  pull(.data$version) %>% 
+  gsub(pattern = "^.+ (\\d+\\.?\\d+\\.?\\d*)$", replacement = "\\1", x = .)
+    
+```
 
-## Acknowledgements
+[![minimal R version](https://img.shields.io/badge/R%3E%3D-`r which_r `-6666ff.svg)](https://cran.r-project.org/) 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b3a76bf0-ec22-487d-b567-7c2ea7ff4812/deploy-status)](https://app.netlify.com/sites/twitterapi/deploys)
+![Build Status](https://img.shields.io/travis/timtrice/twitter_api/master.svg)
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
-  * @jsta for much of the [original code](https://jsta.rbind.io/blog/making-a-twitter-dashboard-with-r/).
+# `r desc::desc_get_field("Package")` (`r desc::desc_get_version() `)
+
+## `r desc::desc_get_field("Title") `
+
+### Prerequisites
+
+```{r}
+packages %>% 
+  filter(type == "Imports") %>% 
+  select(-.data$type) %>% 
+  knitr::kable(
+    col.names = c("Package", "Version"), 
+    caption = "* - Version not specified"
+  )
+```
+
+### Built With
+
+* [R `r which_r `](https://www.r-project.org/) - The R Project for Statistical Computing
+
+### Contributing
+
+Please read [CONTRIBUTING.md](`r url `/blob/master/.github/CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
+### Code of Conduct
+
+Please note that the '`r desc::desc_get_field("Package") `' project is released with a [Contributor Code of Conduct](.github/CODE_OF_CONDUCT.md). By contributing to this project, you agree to abide by its terms.
+
+### Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](`r url `/tags). 
+
+### Authors
+
+  * `r format(desc::desc_get_author(), include = c("family", "given", "role"), braces = list(family = c("", ","), role = c("(Role(s): ", ")"))) `
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+### Acknowledgements
+
+`r usethis::use_tidy_thanks() `

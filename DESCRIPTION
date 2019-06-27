@@ -1,5 +1,5 @@
-Package: timtriceTwitter
-Title: Analyzing twitter for timtrice
+Package: twitterAPI
+Title: Analyzing timtrice's twitter feed using the API
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Tim",
@@ -10,6 +10,8 @@ Description: This project is in development phase
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Depends: 
+  R (>= 3.6.0)
 Imports:
   here, 
   devtools, 
@@ -21,3 +23,5 @@ Imports:
   stringr, 
   usethis, 
   workflowr
+URL: https://github.com/timtrice/twitter_api
+BugReports: https://github.com/timtrice/twitter_api/issues

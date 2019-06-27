@@ -1,56 +1,65 @@
 
-# twitter\_api
-
 [![minimal R
 version](https://img.shields.io/badge/R%3E%3D-3.6.0-6666ff.svg)](https://cran.r-project.org/)
 [![Netlify
 Status](https://api.netlify.com/api/v1/badges/b3a76bf0-ec22-487d-b567-7c2ea7ff4812/deploy-status)](https://app.netlify.com/sites/twitterapi/deploys)
 ![Build
 Status](https://img.shields.io/travis/timtrice/twitter_api/master.svg)
+[![Lifecycle:
+experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
 
-## GitHub repo
+# twitterAPI (0.0.0.9000)
 
-<https://github.com/timtrice/twitter_api>
+## Analyzing timtrice’s twitter feed using the API
 
-**NOTE**: /docs is ignored. Pushed manually to Netlify using the
-[CLI](https://github.com/netlify/netlifyctl/blob/master/README.md).
+### Prerequisites
 
-## Required Packages
+| Package    | Version |
+| :--------- | :------ |
+| here       | \*      |
+| devtools   | \*      |
+| dplyr      | \*      |
+| kableExtra | \*      |
+| purrr      | \*      |
+| rtweet     | \*      |
+| scales     | \*      |
+| stringr    | \*      |
+| usethis    | \*      |
+| workflowr  | \*      |
 
-  - here
+\* - Version not specified
 
-  - dplyr
+### Built With
 
-  - DT
+  - [R 3.6.0](https://www.r-project.org/) - The R Project for
+    Statistical Computing
 
-  - rtweet
+### Contributing
 
-  - workflowr
+Please read
+[CONTRIBUTING.md](https://github.com/timtrice/twitter_api/blob/master/.github/CONTRIBUTING.md)
+for details on our code of conduct, and the process for submitting pull
+requests to us.
 
-<!-- end list -->
+### Code of Conduct
 
-``` r
-install.packages(
-  c(
-    "here", 
-    "devtools", 
-    "dplyr", 
-    "DT", 
-    "rtweet", 
-    "workflowr"
-  )
-)
-```
+Please note that the ‘twitterAPI’ project is released with a
+[Contributor Code of Conduct](.github/CODE_OF_CONDUCT.md). By
+contributing to this project, you agree to abide by its terms.
 
-## Contributing
+### Versioning
 
-## Versioning
+We use [SemVer](http://semver.org/) for versioning. For the versions
+available, see the [tags on this
+repository](https://github.com/timtrice/twitter_api/tags).
 
-## Authors
+### Authors
 
-## License
+  - Trice, Tim (Role(s): aut, cre)
 
-## Acknowledgements
+### License
 
-  - @jsta for much of the [original
-    code](https://jsta.rbind.io/blog/making-a-twitter-dashboard-with-r/).
+This project is licensed under the MIT License - see the
+[LICENSE.md](LICENSE.md) file for details
+
+### Acknowledgements
