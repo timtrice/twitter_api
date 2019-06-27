@@ -11,5 +11,12 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports:
+  here, 
+  dplyr, 
+  kableExtra, 
+  purrr, 
+  rtweet, 
+  scales, 
+  stringr, 
   usethis, 
   workflowr
