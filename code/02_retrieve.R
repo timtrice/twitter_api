@@ -49,3 +49,5 @@ retrieve_favorites <- function(username, n = 3000L, last_status_id = NA) {
 favorites <- retrieve_favorites(username)
 
 save(favorites, file = here("./output/favorites.rds"))
+
+head(favorites)
