@@ -4,7 +4,7 @@ cache: packages
 cran: https://cran.rstudio.com
 script:
   - git clone https://github.com/timtrice/twitter_api.git
-  - cd sample_workflowr
+  - cd twitter_api
   - Rscript --verbose code/02_retrieve.R
   - GH_REPO="@github.com/$TRAVIS_REPO_SLUG.git"
   - FULL_REPO="https://$GH_TOKEN$GH_REPO"
