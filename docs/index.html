@@ -347,7 +347,7 @@ div.section {
 <div class="tab-content">
 <div id="summary" class="tab-pane fade in active">
 <p>
-<strong>Last updated:</strong> 2019-06-26
+<strong>Last updated:</strong> 2019-06-28
 </p>
 <p>
 <strong>Checks:</strong> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> 7 <span class="glyphicon glyphicon-exclamation-sign text-danger" aria-hidden="true"></span> 0
@@ -438,24 +438,18 @@ This reproducible <a href="http://rmarkdown.rstudio.com">R Markdown</a> analysis
 <div class="panel panel-default">
 <div class="panel-heading">
 <p class="panel-title">
-<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomtimtricetwitterapitree9b6322d4cf01ba25bbf51e9a7653dbb0f1b5a4c5targetblank9b6322da"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/timtrice/twitter_api/tree/9b6322d4cf01ba25bbf51e9a7653dbb0f1b5a4c5" target="_blank">9b6322d</a> </a>
+<a data-toggle="collapse" data-parent="#workflowr-checks" href="#strongRepositoryversionstrongahrefhttpsgithubcomtimtricetwitterapitree1d01811b4bf2b92a0db504778d7111036ff9d388targetblank1d01811a"> <span class="glyphicon glyphicon-ok text-success" aria-hidden="true"></span> <strong>Repository version:</strong> <a href="https://github.com/timtrice/twitter_api/tree/1d01811b4bf2b92a0db504778d7111036ff9d388" target="_blank">1d01811</a> </a>
 </p>
 </div>
-<div id="strongRepositoryversionstrongahrefhttpsgithubcomtimtricetwitterapitree9b6322d4cf01ba25bbf51e9a7653dbb0f1b5a4c5targetblank9b6322da" class="panel-collapse collapse">
+<div id="strongRepositoryversionstrongahrefhttpsgithubcomtimtricetwitterapitree1d01811b4bf2b92a0db504778d7111036ff9d388targetblank1d01811a" class="panel-collapse collapse">
 <div class="panel-body">
 <p>
 Great! You are using Git for version control. Tracking code development and connecting the code version to the results is critical for reproducibility. The version displayed above was the version of the Git repository at the time these results were generated. <br><br> Note that you need to be careful to ensure that all relevant files for the analysis have been committed to Git prior to generating the results (you can use <code>wflow_publish</code> or <code>wflow_git_commit</code>). workflowr only checks the R Markdown file, but you know if there are other scripts or data files that it depends on. Below is the status of the Git repository when the results were generated:
 </p>
 <pre><code>
-Ignored files:
-    Ignored:    .Rhistory
-    Ignored:    .Rproj.user/
-
-Untracked files:
-    Untracked:  docs/
-
 Unstaged changes:
-    Modified:   twitterlikes.Rproj
+    Deleted:    docs/.nojekyll
+    Modified:   output/favorites.rds
 
 </code></pre>
 <p>
@@ -494,6 +488,23 @@ Message
 </tr>
 </thead>
 <tbody>
+<tr>
+<td>
+html
+</td>
+<td>
+<a href="https://rawcdn.githack.com/timtrice/twitter_api/1d01811b4bf2b92a0db504778d7111036ff9d388/docs/index.html" target="_blank">1d01811</a>
+</td>
+<td>
+Tim Trice
+</td>
+<td>
+2019-06-27
+</td>
+<td>
+Unignore docs; build in master branch
+</td>
+</tr>
 <tr>
 <td>
 Rmd
@@ -629,15 +640,15 @@ Start workflowr project.
 <div id="workflowr-sessioninfo" class="collapse">
 <pre><code>─ Session info ──────────────────────────────────────────────────────────
  setting  value                       
- version  R version 3.6.0 (2019-04-26)
- os       Ubuntu 18.04.2 LTS          
+ version  R version 3.6.0 (2017-01-27)
+ os       Ubuntu 14.04.5 LTS          
  system   x86_64, linux-gnu           
  ui       X11                         
  language (EN)                        
  collate  en_US.UTF-8                 
  ctype    en_US.UTF-8                 
- tz       America/Chicago             
- date     2019-06-26                  
+ tz       UTC                         
+ date     2019-06-28                  
 
 ─ Packages ──────────────────────────────────────────────────────────────
  package     * version date       lib source        
@@ -645,43 +656,42 @@ Start workflowr project.
  backports     1.1.4   2019-04-10 [1] CRAN (R 3.6.0)
  callr         3.2.0   2019-03-15 [1] CRAN (R 3.6.0)
  cli           1.1.0   2019-03-19 [1] CRAN (R 3.6.0)
- crayon        1.3.4   2017-09-16 [1] CRAN (R 3.5.2)
- desc          1.2.0   2018-05-01 [1] CRAN (R 3.5.2)
+ crayon        1.3.4   2017-09-16 [1] CRAN (R 3.6.0)
+ desc          1.2.0   2018-05-01 [1] CRAN (R 3.6.0)
  devtools      2.0.2   2019-04-08 [1] CRAN (R 3.6.0)
  digest        0.6.19  2019-05-20 [1] CRAN (R 3.6.0)
  evaluate      0.14    2019-05-28 [1] CRAN (R 3.6.0)
  fs            1.3.1   2019-05-06 [1] CRAN (R 3.6.0)
  git2r         0.25.2  2019-03-19 [1] CRAN (R 3.6.0)
- glue          1.3.1   2019-03-12 [1] CRAN (R 3.5.3)
- htmltools     0.3.6   2017-04-28 [1] CRAN (R 3.5.2)
+ glue          1.3.1   2019-03-12 [1] CRAN (R 3.6.0)
+ htmltools     0.3.6   2017-04-28 [1] CRAN (R 3.6.0)
  knitr         1.23    2019-05-18 [1] CRAN (R 3.6.0)
- magrittr      1.5     2014-11-22 [1] CRAN (R 3.5.2)
- memoise       1.1.0   2017-04-21 [1] CRAN (R 3.5.2)
+ magrittr      1.5     2014-11-22 [1] CRAN (R 3.6.0)
+ memoise       1.1.0   2017-04-21 [1] CRAN (R 3.6.0)
  pkgbuild      1.0.3   2019-03-20 [1] CRAN (R 3.6.0)
- pkgload       1.0.2   2018-10-29 [1] CRAN (R 3.5.2)
- prettyunits   1.0.2   2015-07-13 [1] CRAN (R 3.5.2)
+ pkgload       1.0.2   2018-10-29 [1] CRAN (R 3.6.0)
+ prettyunits   1.0.2   2015-07-13 [1] CRAN (R 3.6.0)
  processx      3.3.1   2019-05-08 [1] CRAN (R 3.6.0)
- ps            1.3.0   2018-12-21 [1] CRAN (R 3.5.2)
- R6            2.4.0   2019-02-14 [1] CRAN (R 3.5.2)
- Rcpp          1.0.1   2019-03-17 [1] CRAN (R 3.5.3)
- remotes       2.0.4   2019-04-10 [1] CRAN (R 3.6.0)
- rlang         0.3.4   2019-04-07 [1] CRAN (R 3.6.0)
+ ps            1.3.0   2018-12-21 [1] CRAN (R 3.6.0)
+ R6            2.4.0   2019-02-14 [1] CRAN (R 3.6.0)
+ Rcpp          1.0.1   2019-03-17 [1] CRAN (R 3.6.0)
+ remotes       2.1.0   2019-06-24 [1] CRAN (R 3.6.0)
+ rlang         0.4.0   2019-06-25 [1] CRAN (R 3.6.0)
  rmarkdown     1.13    2019-05-22 [1] CRAN (R 3.6.0)
- rprojroot     1.3-2   2018-01-03 [1] CRAN (R 3.5.2)
- sessioninfo   1.1.1   2018-11-05 [1] CRAN (R 3.5.2)
- stringi       1.4.3   2019-03-12 [1] CRAN (R 3.5.3)
- stringr       1.4.0   2019-02-10 [1] CRAN (R 3.5.2)
- testthat      2.1.1   2019-04-23 [1] CRAN (R 3.6.0)
+ rprojroot     1.3-2   2018-01-03 [1] CRAN (R 3.6.0)
+ sessioninfo   1.1.1   2018-11-05 [1] CRAN (R 3.6.0)
+ stringi       1.4.3   2019-03-12 [1] CRAN (R 3.6.0)
+ stringr       1.4.0   2019-02-10 [1] CRAN (R 3.6.0)
  usethis       1.5.0   2019-04-07 [1] CRAN (R 3.6.0)
- whisker       0.3-2   2013-04-28 [1] CRAN (R 3.5.2)
- withr         2.1.2   2018-03-15 [1] CRAN (R 3.5.2)
+ whisker       0.3-2   2013-04-28 [1] CRAN (R 3.6.0)
+ withr         2.1.2   2018-03-15 [1] CRAN (R 3.6.0)
  workflowr     1.4.0   2019-06-08 [1] CRAN (R 3.6.0)
- xfun          0.7     2019-05-14 [1] CRAN (R 3.6.0)
- yaml          2.2.0   2018-07-25 [1] CRAN (R 3.5.2)
+ xfun          0.8     2019-06-25 [1] CRAN (R 3.6.0)
+ yaml          2.2.0   2018-07-25 [1] CRAN (R 3.6.0)
 
-[1] /usr/local/lib/R/site-library
-[2] /usr/lib/R/site-library
-[3] /usr/lib/R/library</code></pre>
+[1] /home/travis/R/Library
+[2] /usr/local/lib/R/site-library
+[3] /home/travis/R-bin/lib/R/library</code></pre>
 </div>
 
 
