@@ -4,11 +4,11 @@ git config --global user.name "Travis CI"
 git config --global user.email "tim.trice@gmail.com"
 git clone https://github.com/timtrice/twitter_api.git
 cd twitter_api
-git checkout develop
+git checkout master
 Rscript --verbose code/02_retrieve.R
 rm -rf docs
 Rscript -e 'workflowr::wflow_build(update = TRUE, view = FALSE, verbose = TRUE)'
 git add .
-MSG="Rebuild docs, $(date)"
+MSG="Rebuild documents, $(date) [skip ci]"
 git commit -m "$MSG"
-git push --force $FULL_REPO develop:master
+git push --force $FULL_REPO
