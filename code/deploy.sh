@@ -9,6 +9,6 @@ Rscript --verbose code/02_retrieve.R
 rm -rf docs
 Rscript -e 'workflowr::wflow_build(update = TRUE, view = FALSE, verbose = TRUE)'
 git add .
-MSG="Rebuild documents, $(date) [skip ci]"
+MSG="Rebuild documents, $(date) [ci skip]"
 git commit -m "$MSG"
 git push --force $FULL_REPO
