@@ -1,24 +1,17 @@
 FROM rocker/rstudio:latest
 
+ARG REPO_URL="https://github.com/timtrice/twitter_api.git"
+ARG DIR="twitter_api"
+
+ENV ENV_REPO_URL=$REPO_URL
+ENV ENV_DIR=$DIR
+
 RUN apt-get update \
   && apt-get install -y \
+    libxml2-dev \
     vim
 
-RUN install2.r -e \
-  here \
-  devtools \
-  dplyr \
-  kableExtra \
-  purrr \
-  rtweet \
-  scales \
-  stringr \
-  usethis \
-  workflowr
-
-RUN cd /home/rstudio/.rstudio/monitored/user-settings/ \
-  && mv user-settings user-settings.copy \
-  && wget https://gist.githubusercontent.com/timtrice/94a679b51388faf99ef7918c7bdaff8d/raw/9a52ffebd1e2e8587918a31ff8e962110b816936/user-settings \
-  && chown -R rstudio:rstudio user-settings
-
-RUN Rscript -e 'sessionInfo();'
+RUN cd /home/rstudio \
+  && git clone $ENV_REPO_URL \
+  && cd $ENV_DIR \
+  && Rscript --verbose code/01_install_packages.R
