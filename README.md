@@ -29,6 +29,31 @@ experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](h
 
 \* - Version not specified
 
+#### Docker
+
+A Docker image of this project is available for
+    use.
+
+  - [timtrice/twitter\_api](https://cloud.docker.com/repository/docker/timtrice/twitter_api)
+
+##### Run
+
+Set $LOCAL to your
+
+    LOCAL="/home/timtrice/Projects/ropensci/rrricanes"
+    
+    docker run \
+      -dti \
+      -e DISABLE_AUTH=true \
+      -p 8787:8787 \
+      --name twitter_api \
+      -v $LOCAL:/home/rstudio/twitter_api \
+      timtrice/twitter_api:release
+
+##### Shell
+
+    docker exec -ti twitter_api /bin/bash
+
 ### Built With
 
   - [R 3.6.0](https://www.r-project.org/) - The R Project for
