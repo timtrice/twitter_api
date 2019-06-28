@@ -8,8 +8,10 @@ ENV ENV_DIR=$DIR
 
 RUN apt-get update \
   && apt-get install -y \
+    libgit2-dev \
     libxml2-dev \
-    vim
+    vim \
+    zlib1g-dev
 
 RUN cd /home/rstudio \
   && git clone $ENV_REPO_URL \
