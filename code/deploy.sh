@@ -5,9 +5,9 @@ git config --global user.email "tim.trice@gmail.com"
 git clone https://github.com/timtrice/twitter_api.git
 cd twitter_api
 Rscript --verbose code/02_retrieve.R
-Rscript -e 'workflowr::wflow_build(verbose = TRUE, view = FALSE);'
-cd docs
-git init
+rm -rf docs
+Rscript -e 'workflowr::wflow_build(update = TRUE, view = FALSE, verbose = TRUE)'
 git add .
-git commit -m 'Rebuild docs'
-git push --force $FULL_REPO master:gh-pages
+MSG="Rebuild docs, $(date)"
+git commit -m "$MSG"
+git push $FULL_REPO
